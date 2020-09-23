@@ -12,4 +12,10 @@ function Survey(props){
     );
 }
 
+Survey.propTypes = {
+  surveytitle: PropTypes.string,
+  surveydesc: PropTypes.string,
+  whenSurveyClicked: PropTypes.func
+}
+
 export default Survey; 

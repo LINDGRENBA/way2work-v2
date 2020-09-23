@@ -32,6 +32,7 @@ function SurveyList(props) {
           q3a1 = {survey.q3a1}
           q3a2 = {survey.q3a2}
           q3a3 = {survey.q3a3}
+          key={survey.id}
           />
         })}
       </React.Fragment>
@@ -46,7 +47,7 @@ function SurveyList(props) {
 }
 
 SurveyList.propTypes = {
-  // onSurveySelection: PropTypes.func
+  onSurveySelection: PropTypes.func
 };
 
 export default SurveyList;
