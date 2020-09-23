@@ -12,6 +12,12 @@ function Header(){
         <li>
           <Link to="/signin">Sign In</Link>
         </li>
+        <li>
+          <Link to="/newsurveyform">Create Survey</Link>
+        </li>
+        <li>
+          <Link to="/surveyList">See Surveys</Link>
+        </li>
       </ul>
     </React.Fragment>
   );
