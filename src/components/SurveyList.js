@@ -32,6 +32,7 @@ function SurveyList(props) {
           q3a1 = {survey.q3a1}
           q3a2 = {survey.q3a2}
           q3a3 = {survey.q3a3}
+          id={survey.id}
           key={survey.id}
           />
         })}
