@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 import { useFirestore } from 'react-redux-firebase';
 
@@ -10,7 +10,7 @@ function NewSurveyForm(props){
   function addSurveyToFirestore(event) {
     event.preventDefault();
 
-    //props.onNewSurveyCreation();
+    props.onNewSurveyCreation();
 
     return firestore.collection('surveys').add(
       {
@@ -41,8 +41,8 @@ function NewSurveyForm(props){
   );
 }
 
-// NewSurveyForm.propTypes = {
-//   onNewSurveyCreation: PropTypes.func
-// };
+NewSurveyForm.propTypes = {
+  onNewSurveyCreation: PropTypes.func
+};
 
 export default NewSurveyForm;

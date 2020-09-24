@@ -38,13 +38,33 @@ class SurveyControl extends React.Component {
   handleChangingSelectedSurvey = (id) => {
     this.props.firestore.get({collection: 'surveys', doc: id}).then((survey) => {
       const firestoreSurvey = {
-        names: survey.get("names"),
-        location: survey.get("location"),
-        issue: survey.get("issue"),
-        id: survey.id
+        id: id,
+        surveytitle: survey.get("surveytitle"),
+        surveydesc: survey.get("surveydesc"),
+        q1: survey.get("q1"),
+        q1a1: survey.get("q1a1"),
+        q1a2: survey.get("q1a2"),
+        q1a3: survey.get("q1a3"),
+        q2: survey.get("q2"),
+        q2a1: survey.get("q2a1"),
+        q2a2: survey.get("q2a2"),
+        q2a3: survey.get("q2a3"),
+        q3: survey.get("q3"),
+        q3a1: survey.get("q3a1"),
+        q3a2: survey.get("q3a2"),
+        q3a3: survey.get("q3a3")
       }
       this.setState({selectedSurvey: firestoreSurvey });
     });
+  }
+
+  handleSurveyResponse = (id) => {
+    if (this.state.selectedSurvey != null) {
+      this.setState({
+        selectedSurvey: null,
+        editing: false
+      });
+    }
   }
 
   // handleEditClick = () => {
@@ -89,7 +109,8 @@ render () {
     } else if (this.state.selectedSurvey != null) {
       currentlyVisibleState = 
       <SurveyActive 
-        survey = {this.state.selectedSurvey} 
+        survey = {this.state.selectedSurvey}
+        onClickingSubmit = {this.handleSurveyResponse} 
         onClickingDelete = {this.handleDeletingSurvey} 
         onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to Surveys";
@@ -97,7 +118,10 @@ render () {
       currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
       buttonText = "Return to Surveys";
     } else {
-      currentlyVisibleState = <SurveyList surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />;
+      currentlyVisibleState = <SurveyList 
+        surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} 
+        onClickingAdd = {this.handleAddingNewSurveyToList}
+      />;
       buttonText = "Add Survey";
     }
     return (
