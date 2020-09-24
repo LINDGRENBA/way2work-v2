@@ -20,7 +20,7 @@
 
 ## **💻 `Setup`**
 * to clone this content, copy the url provided by the green 'Code' button in GitHub
-* in command line use the command `git clone https://github.com/LINDGRENBA/way2work.git`
+* in command line use the command `git clone https://github.com/thekidnamedkd/way2work-v2.git`
 * open the program in a code editor
 * navigate to the Way2Work directory and type `npm install` in the command line to install all of the necessary dependencies
 * remaining in the Way2Work directory type `npm start` in the command line to run the program
@@ -39,7 +39,7 @@
 ## **🐛 `Bugs`**
 | Message or Error | Cause | Fix |
 |---------|-------|-----|
-| When using variables from .env file to config firebase, returns message `FirebaseError: projectId must be a string in FirebaseApp.options`, works if use exact values in configuration, but then not secure, if switched to template literals, receive message `{"error":{"code":400,"message":"API key not valid. Please pass a valid API key.","errors":[{"message":"API key not valid. Please pass a valid API key.","domain":"global","reason":"badRequest"}],"status":"INVALID_ARGUMENT"}}` | ? | ? |
+| When using variables from .env file to config firebase, returns message `FirebaseError: projectId must be a string in FirebaseApp.options`, works if use exact values in configuration, but then not secure, if switched to template literals, receive message `{"error":{"code":400,"message":"API key not valid. Please pass a valid API key.","errors":[{"message":"API key not valid. Please pass a valid API key.","domain":"global","reason":"badRequest"}],"status":"INVALID_ARGUMENT"}}` | ? | Another person clones and hosts the project |
 |  |  |  |
 |  |  |  |
 |  |  |  |
