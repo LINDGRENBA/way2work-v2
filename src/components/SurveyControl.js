@@ -118,7 +118,10 @@ render () {
       currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
       buttonText = "Return to Surveys";
     } else {
-      currentlyVisibleState = <SurveyList surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />;
+      currentlyVisibleState = <SurveyList 
+        surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} 
+        onClickingAdd = {this.handleAddingNewSurveyToList}
+      />;
       buttonText = "Add Survey";
     }
     return (

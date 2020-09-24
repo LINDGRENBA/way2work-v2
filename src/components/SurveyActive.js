@@ -28,16 +28,19 @@ function SurveyActive (props){
     <h1>{props.survey.surveytitle}</h1>
     <h3>{props.survey.surveydesc}</h3>
     <form onSubmit={addSurveyResponseToFireStore}>
+      <label for="q1answer">{props.survey.q1}:</label>
       <select name="q1answer" id="q1answer">
         <option value={props.survey.q1a1}>{props.survey.q1a1}</option>
         <option value={props.survey.q1a2}>{props.survey.q1a2}</option>
         <option value={props.survey.q1a3}>{props.survey.q1a3}</option>
       </select>
+      <label for="q2answer">{props.survey.q2}:</label>
       <select name="q2answer" id="q2answer">
         <option value={props.survey.q2a1}>{props.survey.q2a1}</option>
         <option value={props.survey.q2a2}>{props.survey.q2a2}</option>
         <option value={props.survey.q2a3}>{props.survey.q2a3}</option>
       </select>
+      <label for="q3answer">{props.survey.q3}:</label>
       <select name="q3answer" id="q3answer">
         <option value={props.survey.q3a1}>{props.survey.q3a1}</option>
         <option value={props.survey.q3a2}>{props.survey.q3a2}</option>

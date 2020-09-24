@@ -15,12 +15,6 @@ function App() {
         <Route path="/signin">
           <Signin />
         </Route>
-        <Route path="/newsurveyform">
-          <NewSurveyForm  />
-        </Route>
-        <Route path="/surveyList">
-          <SurveyList />
-        </Route>
         <Route path="/">
           <SurveyControl />
         </Route>
