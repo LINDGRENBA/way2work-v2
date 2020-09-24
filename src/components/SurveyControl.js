@@ -47,6 +47,15 @@ class SurveyControl extends React.Component {
     });
   }
 
+  handleSurveyResponse = (id) => {
+    if (this.state.selectedSurvey != null) {
+      this.setState({
+        selectedSurvey: null,
+        editing: false
+      });
+    }
+  }
+
   // handleEditClick = () => {
   //   this.setState({editing: true});
   // }
@@ -89,7 +98,8 @@ render () {
     } else if (this.state.selectedSurvey != null) {
       currentlyVisibleState = 
       <SurveyActive 
-        survey = {this.state.selectedSurvey} 
+        survey = {this.state.selectedSurvey}
+        onClickingSubmit = {this.handleSurveyResponse} 
         onClickingDelete = {this.handleDeletingSurvey} 
         onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to Surveys";
